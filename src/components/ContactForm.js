@@ -17,11 +17,11 @@ import axios from "axios";
 //   geocodeByAddress,
 //   getLatLng,
 // } from "react-places-autocomplete";
-import Geosuggest from "react-geosuggest";
-import PlacesAutocomplete, {
-  geocodeByAddress,
-  getLatLng,
-} from "react-places-autocomplete";
+// import Geosuggest from "react-geosuggest";
+// import PlacesAutocomplete, {
+//   geocodeByAddress,
+//   getLatLng,
+// } from "react-places-autocomplete";
 //** styling */
 import "../App.scss";
 
@@ -165,7 +165,6 @@ const ContactForm = () => {
         `https://emailvalidation.abstractapi.com/v1/?api_key=6993e55d53984d0fbac6bf7e2d90fd1f&email=${email}`
       );
       return response.data.is_valid;
-      setValidEmail(false);
     } catch (error) {
       console.error("Error validating email:", error);
       setValidEmail(true);
@@ -179,7 +178,7 @@ const ContactForm = () => {
       const response = await axios.get(
         `http://apilayer.net/api/validate?access_key=6d6d22eddd0ea085f7702c94d5155ee3&number=${phone}`
       );
-      if (response.data.valid == true) {
+      if (response.data.valid === true) {
         setValidPhone(false);
       } else {
         setValidPhone(true);
