@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container } from "@mui/material";
+import React from "react";
+import ContactForm from "./components/ContactForm";
+import "./App.scss";
+import HowItWork from "./components/HowItWork";
+import Footer from "./components/Footer";
+const App = () => {
 
-function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="Wrapper">
+      <Container>
+        <h1>Help Protect Your Home with a New Security System</h1>
+        <h3>
+          Quick and easy. Get matched with the best Home Security company in
+          your area
+        </h3>
+        <ContactForm />
+        <HowItWork />
+        <Footer />
+      </Container>
     </div>
   );
-}
+};
 
 export default App;
